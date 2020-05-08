@@ -13,11 +13,7 @@ class UsersController < ApplicationController
         @user[:password] = user_params[:password]
         @user[:username] = user_params[:username]
         @user[:email] = user_params[:email]
-        if @user.update(user_params)
-            flash[:notice] = "Update Successful"
-         else
-            flash[:notice] = "Update Failed"
-         end
+        @user.update(user_params)
         render :edit
     end
 
